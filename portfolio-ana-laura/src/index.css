@@ -1,0 +1,47 @@
+:root {
+  --bg-primary: #121212;
+  --text-primary: #F5F5F5;
+  --accent-color: #C1A68D;
+
+  /* 🔥 controla altura do header aqui */
+  --header-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* 🔥 SOLUÇÃO GLOBAL */
+  padding-top: var(--header-height);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* mobile (header menor se quiser ajustar depois) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+}
