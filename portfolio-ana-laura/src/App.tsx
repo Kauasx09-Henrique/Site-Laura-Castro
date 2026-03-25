@@ -1,7 +1,7 @@
 import './index.css'
 import { Header } from './components/Header'
 import { Hero } from './pages/Hero'
-import { SobreMim } from './pages/SobreMim'
+import SobreMim from './pages/SobreMim'
 import { Highlights } from './pages/Highlights'
 import { Contact } from './pages/Contact'
 import { Obrigada } from './pages/Obrigada'
