@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './style/lastScreen.css';
 
 const ContactItem = ({ icon, text, text2, position }: { icon: string, text: string, text2?: string, position: { top: string, left: string } }) => (

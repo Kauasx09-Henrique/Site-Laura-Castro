@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import './style/highlights.css';
 
 const HoverVideoCard = ({ img, video, alt, link }: { img: string, video: string, alt: string, link: string }) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './style/contact.css';
 
 const WhatsAppIcon = () => (
