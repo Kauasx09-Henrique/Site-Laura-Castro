@@ -1,6 +1,6 @@
 import './style/SobreMim.css';
 
-export const SobreMim = () => {
+const SobreMim = () => {
     return (
         <section className="sobre-section" id="sobre">
             <div className="sobre-top-nav">
@@ -28,3 +28,5 @@ export const SobreMim = () => {
         </section>
     );
 };
+
+export default SobreMim;
