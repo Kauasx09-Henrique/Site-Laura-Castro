@@ -1,4 +1,4 @@
-import './style/SobreMim.css';
+import './style/sobreMim.css';
 
 const SobreMim = () => {
     return (
