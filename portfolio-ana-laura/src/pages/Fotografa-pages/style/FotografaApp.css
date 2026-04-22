@@ -1,0 +1,12 @@
+.fotografa-theme {
+    background-color: #121212;
+    color: #F4EFE6;
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.fotografa-theme ::selection {
+    background: #E68A9F;
+    color: #121212;
+}

@@ -1,0 +1,29 @@
+.videomaker-theme {
+    background-color: #0f0e0d;
+    color: #F4EFE6;
+    transition: background-color 0.5s ease;
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.videomaker-theme .highlights-title {
+    -webkit-text-stroke: 1px #F4EFE6;
+    color: transparent;
+}
+
+.videomaker-theme .highlights-title:hover {
+    color: #F4EFE6;
+    -webkit-text-stroke: 0px;
+}
+
+.videomaker-theme ::selection {
+    background: #E68A9F;
+    color: #121212;
+}
+
+@media (max-width: 768px) {
+    .videomaker-theme {
+        overflow-x: hidden;
+    }
+}

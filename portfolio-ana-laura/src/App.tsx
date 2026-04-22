@@ -1,24 +1,14 @@
-import './index.css'
-import { Header } from './components/Header'
-import { Hero } from './pages/Hero'
-import SobreMim from './pages/SobreMim'
-import { Highlights } from './pages/Highlights'
-import { Contact } from './pages/Contact'
-import { Obrigada } from './pages/Obrigada'
+import React, { useState } from 'react';
+import { Landing } from './Landing';
+import { FotografaApp } from './pages/Fotografa-pages/FotografaApp';
+import { VideomakerApp } from './pages/Videomaker-pages/VideomakeApp';
 
+export const App = () => {
+  const [role, setRole] = useState<'video' | 'foto' | null>(null);
 
-function App() {
-  return (
-    <main>
-      <Header />
-      <Hero />
-      <SobreMim />
-      <Highlights />
-      <Contact />
-      <Obrigada />
+  if (!role) {
+    return <Landing onSelectRole={setRole} />;
+  }
 
-    </main>
-  )
-}
-
-export default App
+  return role === 'foto' ? <FotografaApp /> : <VideomakerApp />;
+};

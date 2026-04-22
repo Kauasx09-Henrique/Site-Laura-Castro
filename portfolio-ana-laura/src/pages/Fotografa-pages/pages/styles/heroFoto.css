@@ -1,0 +1,113 @@
+.historia-section {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #F4EFE6;
+    color: #121212;
+    padding: 100px 5vw;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.historia-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.historia-header {
+    margin-bottom: 60px;
+}
+
+.historia-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.85;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: #121212;
+}
+
+.historia-title.indent {
+    padding-left: 15vw;
+    color: #E68A9F;
+}
+
+.historia-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8vw;
+}
+
+.historia-text-block {
+    width: 45%;
+    padding-top: 20px;
+}
+
+.historia-paragraph {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    text-align: justify;
+    color: #333333;
+}
+
+.historia-image-block {
+    width: 55%;
+    position: relative;
+}
+
+.historia-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+    display: block;
+}
+
+.historia-quote {
+    position: absolute;
+    bottom: -30px;
+    left: -40px;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 0.9;
+    color: #121212;
+    background-color: #F4EFE6;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+@media (max-width: 900px) {
+    .historia-section {
+        padding: 80px 5vw;
+    }
+
+    .historia-content {
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+
+    .historia-text-block,
+    .historia-image-block {
+        width: 100%;
+    }
+
+    .historia-title.indent {
+        padding-left: 0;
+    }
+
+    .historia-quote {
+        bottom: -20px;
+        left: 10px;
+        font-size: clamp(2rem, 8vw, 3rem);
+        padding: 10px 15px;
+    }
+}
