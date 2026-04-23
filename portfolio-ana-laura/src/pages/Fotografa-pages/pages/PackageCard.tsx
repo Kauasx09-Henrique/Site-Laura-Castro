@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles/pacotesFoto.css';
 
 const PackageCard = ({ number, title, price, features, isHighlighted }: { number: string, title: string, price: string, features: string[], isHighlighted?: boolean }) => {

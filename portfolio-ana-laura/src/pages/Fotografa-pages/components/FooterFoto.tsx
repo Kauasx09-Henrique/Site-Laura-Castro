@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FaWhatsapp, FaInstagram, FaArrowUp } from 'react-icons/fa';
 import './style/footerFoto.css';
 

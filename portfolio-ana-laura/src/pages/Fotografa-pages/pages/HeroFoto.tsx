@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles/heroFoto.css';
 
 export const HeroFoto = () => {

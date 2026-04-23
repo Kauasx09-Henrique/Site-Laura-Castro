@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles/highlightsFoto.css';
 
 const EditorialCard = ({ img, alt, title, aspect, index }: { img: string, alt: string, title: string, aspect: string, index: string }) => {
