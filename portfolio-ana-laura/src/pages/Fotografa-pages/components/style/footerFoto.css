@@ -1,0 +1,145 @@
+.footer-premium {
+    width: 100vw;
+    background-color: #0A0908;
+    color: #F4EFE6;
+    padding: 100px 5vw 30px 5vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-massive-text {
+    width: 100%;
+    margin-bottom: 80px;
+    border-bottom: 1px solid rgba(244, 239, 230, 0.15);
+    padding-bottom: 40px;
+}
+
+.footer-massive-text h1 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(3rem, 11vw, 13rem);
+    line-height: 0.8;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: #F4EFE6;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 5vw;
+    margin-bottom: 100px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: rgba(244, 239, 230, 0.4);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.brand-col p {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(244, 239, 230, 0.8);
+    margin: 0;
+    max-width: 500px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links a {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    color: #F4EFE6;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.footer-links a:hover {
+    color: #E68A9F;
+    transform: translateX(10px);
+}
+
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(244, 239, 230, 0.15);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: rgba(244, 239, 230, 0.5);
+    text-transform: uppercase;
+}
+
+.footer-to-top {
+    background: transparent;
+    border: none;
+    color: #F4EFE6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-to-top:hover {
+    color: #E68A9F;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .footer-massive-text h1 {
+        text-align: left;
+        text-align-last: left;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .brand-col p {
+        font-size: 1rem;
+    }
+}

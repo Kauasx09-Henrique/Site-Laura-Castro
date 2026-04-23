@@ -1,15 +1,19 @@
 import React from 'react';
-import { Header } from '../../components/Header'; // Reutilizando o header global
-import { Hero } from './components/Hero';
-import { Highlights } from './components/Highlights'; // A galeria de vídeos que já fizemos
-import { Contact } from './components/Contact';
-import { Obrigada } from './components/Obrigada';
+import { Header } from './components/Header';
+import { Hero } from './components/pages/Hero';
+import { Highlights } from './components/pages/Highlights';
+import { Contact } from './components/pages/Contact';
+import { Obrigada } from './components/pages/Obrigada';
 import './style/VideomakerApp.css';
 
-export const VideomakerApp = () => {
+interface VideomakerProps {
+    onSwitchMode: () => void;
+}
+
+export const VideomakerApp: React.FC<VideomakerProps> = ({ onSwitchMode }) => {
     return (
         <main className="videomaker-theme">
-            <Header />
+            <Header onSwitchMode={onSwitchMode} />
             <Hero />
             <Highlights />
             <Contact />

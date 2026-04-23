@@ -1,0 +1,263 @@
+.historia-section {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #F4EFE6;
+    color: #121212;
+    padding: 120px 5vw;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.historia-bg-watermark {
+    position: absolute;
+    top: 5%;
+    left: -5%;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 28vw;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(18, 18, 18, 0.04);
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.historia-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.historia-header {
+    margin-bottom: 80px;
+}
+
+.historia-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.85;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: #121212;
+}
+
+.historia-title.indent {
+    padding-left: 15vw;
+    color: transparent;
+    -webkit-text-stroke: 2px #121212;
+    transition: color 0.4s ease;
+}
+
+.historia-title.indent:hover {
+    color: #E68A9F;
+    -webkit-text-stroke: 2px transparent;
+}
+
+.historia-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10vw;
+}
+
+.historia-text-block {
+    width: 45%;
+    padding-top: 40px;
+    position: relative;
+}
+
+.historia-divider {
+    width: 60px;
+    height: 2px;
+    background-color: #E68A9F;
+    margin-bottom: 40px;
+}
+
+.historia-paragraph {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    text-align: justify;
+    color: #333333;
+}
+
+.historia-signature {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    color: #121212;
+    margin-top: 50px;
+    letter-spacing: 1px;
+}
+
+.historia-image-block {
+    width: 55%;
+    position: relative;
+}
+
+.historia-img-wrapper {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    cursor: zoom-in;
+}
+
+.historia-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: grayscale(100%);
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), filter 0.8s ease;
+}
+
+.historia-img-wrapper:hover .historia-img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.historia-img-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(24, 22, 20, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(244, 239, 230, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 10;
+}
+
+.historia-img-badge span {
+    color: #F4EFE6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.historia-img-wrapper:hover .historia-img-badge {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.historia-quote {
+    position: absolute;
+    bottom: -40px;
+    left: -60px;
+    background-color: #121212;
+    padding: 30px 40px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+}
+
+.historia-quote span {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    line-height: 0.9;
+    color: #F4EFE6;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.lightbox-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 40px;
+    right: 5vw;
+    color: #F4EFE6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: #E68A9F;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.lightbox-modal.active .lightbox-img {
+    transform: scale(1);
+}
+
+@media (max-width: 900px) {
+    .historia-section {
+        padding: 100px 5vw;
+    }
+
+    .historia-content {
+        flex-direction: column-reverse;
+        gap: 80px;
+    }
+
+    .historia-text-block,
+    .historia-image-block {
+        width: 100%;
+    }
+
+    .historia-title.indent {
+        padding-left: 0;
+    }
+
+    .historia-quote {
+        bottom: -20px;
+        left: 0;
+        padding: 20px 25px;
+    }
+
+    .historia-quote span {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+    }
+
+    .historia-img-badge {
+        display: none;
+    }
+}

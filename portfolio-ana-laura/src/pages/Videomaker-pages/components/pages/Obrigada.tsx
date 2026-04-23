@@ -1,4 +1,4 @@
-import './style/Obrigada.css';
+import './style/obrigada.css';
 
 export const Obrigada = () => {
     return (

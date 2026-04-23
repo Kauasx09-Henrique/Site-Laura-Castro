@@ -1,7 +1,11 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style/header.css';
 
-export const Header = () => {
+interface HeaderProps {
+    onSwitchMode: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onSwitchMode }) => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -29,15 +33,21 @@ export const Header = () => {
     return (
         <header className={`header ${scrolled ? 'header-scrolled' : ''}`}>
             <div className="header-container">
-                <a href="#sobre" className="header-logo" onClick={closeMenu}>
+                {/* 1. Logo agora volta para a Landing Page */}
+                <span className="header-logo" onClick={onSwitchMode} style={{ cursor: 'pointer' }}>
                     ANA LAURA CASTRO<span className="accent">.</span>
-                </a>
+                </span>
 
                 <nav className="header-nav">
                     <a href="#sobre" className="nav-item">Sobre</a>
                     <a href="#portfolio" className="nav-item">Portfólio</a>
                     <a href="#contact" className="nav-item">Contato</a>
                 </nav>
+
+                {/* 2. Botão para ir para o lado Fotógrafa */}
+                <button className="switch-mode-btn" onClick={onSwitchMode}>
+                    FOTÓGRAFA ⇆
+                </button>
 
                 <button className="hamburger-btn" onClick={toggleMenu}>
                     {menuOpen ? (
@@ -56,6 +66,15 @@ export const Header = () => {
                 <a href="#sobre" className="mobile-nav-item" onClick={closeMenu}>sobre</a>
                 <a href="#portfolio" className="mobile-nav-item" onClick={closeMenu}>portfólio</a>
                 <a href="#contact" className="mobile-nav-item" onClick={closeMenu}>contato</a>
+
+                {/* Botão de trocar no mobile (já que escondemos o botão lá em cima em telas pequenas) */}
+                <span
+                    className="mobile-nav-item switch-mobile"
+                    onClick={onSwitchMode}
+                    style={{ marginTop: '40px', fontSize: '1.5rem', color: '#E68A9F', cursor: 'pointer' }}
+                >
+                    FOTÓGRAFA ⇆
+                </span>
             </div>
         </header>
     );

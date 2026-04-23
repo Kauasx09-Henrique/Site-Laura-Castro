@@ -4,8 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
-    /* 🔥 variável global */
+    height: var(--header-height, 80px);
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -53,9 +52,9 @@
 .header-nav {
     display: flex;
     gap: 40px;
+    align-items: center;
 }
 
-/* ESPECIFICIDADE CORRETA */
 .header-nav a.nav-item {
     font-size: 1.2rem;
     font-weight: 500;
@@ -68,7 +67,6 @@
     font-family: 'Impact', 'Arial Black', sans-serif;
 }
 
-/* LINHA ANIMADA */
 .header-nav a.nav-item::after {
     content: '';
     position: absolute;
@@ -80,13 +78,36 @@
     transition: width 0.3s ease;
 }
 
-/* HOVER */
 .header-nav a.nav-item:hover {
     color: #E68A9F;
 }
 
 .header-nav a.nav-item:hover::after {
     width: 100%;
+}
+
+/* 👇 NOVO: BOTÃO DE SWITCH PARA FOTÓGRAFA */
+.switch-mode-btn {
+    background: transparent;
+    border: 1px solid rgba(244, 239, 230, 0.3);
+    color: #F4EFE6;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.switch-mode-btn:hover {
+    border-color: #E68A9F;
+    background-color: rgba(230, 138, 159, 0.1);
+    color: #E68A9F;
 }
 
 /* BOTÃO HAMBURGER */
@@ -128,6 +149,7 @@
     color: #F4EFE6;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
@@ -139,6 +161,11 @@
 @media (max-width: 768px) {
     .header-nav {
         display: none;
+    }
+
+    .switch-mode-btn {
+        display: none;
+        /* Escondido no mobile, pois adicionamos no menu lateral */
     }
 
     .header-logo {

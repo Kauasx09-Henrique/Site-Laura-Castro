@@ -1,113 +1,254 @@
-.historia-section {
+.hero-foto-premium {
+    position: relative;
     width: 100vw;
-    min-height: 100vh;
-    background-color: #F4EFE6;
-    color: #121212;
-    padding: 100px 5vw;
-    box-sizing: border-box;
+    height: 100vh;
+    background-color: #121212;
+    color: #F4EFE6;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.historia-container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+.hero-foto-background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 0.8;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.historia-header {
-    margin-bottom: 60px;
-}
-
-.historia-title {
+.hero-foto-background-text span {
     font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: clamp(4rem, 12vw, 10rem);
-    line-height: 0.85;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-    color: #121212;
+    font-size: 25vw;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(244, 239, 230, 0.05);
+    white-space: nowrap;
 }
 
-.historia-title.indent {
-    padding-left: 15vw;
-    color: #E68A9F;
-}
-
-.historia-content {
+.hero-foto-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 8vw;
+    align-items: center;
+    padding: 0 5vw;
+    box-sizing: border-box;
 }
 
-.historia-text-block {
-    width: 45%;
-    padding-top: 20px;
+.hero-foto-text-column {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
 }
 
-.historia-paragraph {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    font-weight: 400;
-    margin: 0 0 30px 0;
-    text-align: justify;
-    color: #333333;
+.hero-foto-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
-.historia-image-block {
-    width: 55%;
+.hero-line {
+    width: 60px;
+    height: 1px;
+    background-color: #E68A9F;
+}
+
+.hero-foto-title-main {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(4rem, 10vw, 11rem);
+    line-height: 0.9;
+    margin: 0;
+    letter-spacing: -2px;
+    position: relative;
+    z-index: 20;
+}
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 2px #F4EFE6;
+}
+
+.solid-text {
+    color: #F4EFE6;
+}
+
+.hero-foto-scroll-indicator {
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+}
+
+.scroll-line {
+    width: 80px;
+    height: 1px;
+    background-color: #F4EFE6;
+    animation: pulseLine 2s infinite;
+}
+
+@keyframes pulseLine {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    50.1% {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+
+.hero-foto-image-column {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
     position: relative;
 }
 
-.historia-img {
-    width: 100%;
+.hero-foto-image-wrapper {
+    width: 85%;
     aspect-ratio: 3 / 4;
+    position: relative;
+}
+
+.hero-foto-image-wrapper img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 2px;
-    display: block;
+    filter: grayscale(15%);
+    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.5);
+    transition: filter 0.8s ease;
 }
 
-.historia-quote {
+.hero-foto-image-wrapper:hover img {
+    filter: grayscale(0%);
+}
+
+.hero-rotating-badge {
     position: absolute;
-    bottom: -30px;
-    left: -40px;
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: clamp(2.5rem, 4vw, 4rem);
-    line-height: 0.9;
-    color: #121212;
-    background-color: #F4EFE6;
-    padding: 15px 25px;
-    text-transform: uppercase;
-    letter-spacing: -1px;
+    bottom: -50px;
+    left: -50px;
+    width: 180px;
+    height: 180px;
+    animation: rotateBadge 15s linear infinite;
+    z-index: 30;
+}
+
+.hero-rotating-badge svg {
+    width: 100%;
+    height: 100%;
+    fill: #E68A9F;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 6px;
+}
+
+@keyframes rotateBadge {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-foto-title-main {
+        font-size: clamp(4rem, 8vw, 8rem);
+    }
 }
 
 @media (max-width: 900px) {
-    .historia-section {
-        padding: 80px 5vw;
-    }
-
-    .historia-content {
+    .hero-foto-content {
         flex-direction: column-reverse;
+        justify-content: center;
         gap: 60px;
+        height: 100%;
+        padding-top: 80px;
     }
 
-    .historia-text-block,
-    .historia-image-block {
+    .hero-foto-image-column {
         width: 100%;
+        justify-content: center;
     }
 
-    .historia-title.indent {
-        padding-left: 0;
+    .hero-foto-image-wrapper {
+        width: 75%;
+        aspect-ratio: 4 / 5;
     }
 
-    .historia-quote {
-        bottom: -20px;
-        left: 10px;
-        font-size: clamp(2rem, 8vw, 3rem);
-        padding: 10px 15px;
+    .hero-foto-text-column {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        flex: none;
+    }
+
+    .hero-foto-subtitle {
+        justify-content: center;
+    }
+
+    .hero-line {
+        display: none;
+    }
+
+    .hero-foto-title-main {
+        font-size: clamp(4rem, 14vw, 6rem);
+    }
+
+    .hero-foto-scroll-indicator {
+        display: none;
+    }
+
+    .hero-rotating-badge {
+        width: 120px;
+        height: 120px;
+        bottom: -30px;
+        left: -20px;
+    }
+
+    .hero-foto-background-text span {
+        font-size: 35vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-foto-image-wrapper {
+        width: 90%;
     }
 }
